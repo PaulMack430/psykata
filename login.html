@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psykata — Member Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">PSY<span class="logo-accent">KATA</span></a>
+    <div class="nav-links">
+      <a href="index.html" style="font-size:.875rem;color:var(--muted);">&#8592; Back to home</a>
+    </div>
+  </div>
+</nav>
+
+<div class="login-layout">
+
+  <!-- ── Left: Pitch ── -->
+  <div class="login-left">
+    <div>
+      <p class="t-label" style="color:var(--crimson);margin-bottom:20px;">Member Access</p>
+      <h2 class="t-display login-pitch">
+        Your practice,<br>without limits.
+      </h2>
+      <p class="login-pitch-sub">
+        Members get full access to the curriculum across all three levels,
+        plus monthly new sessions and instructor Q&amp;As.
+      </p>
+      <ul class="login-bullets">
+        <li><span class="bullet-rule"></span> 120+ on-demand training videos</li>
+        <li><span class="bullet-rule"></span> Structured progression across beginner, intermediate and advanced</li>
+        <li><span class="bullet-rule"></span> New content added every month</li>
+        <li><span class="bullet-rule"></span> Multi-angle, slow-motion technique breakdowns</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Right: Form ── -->
+  <div class="login-right">
+    <div style="max-width:380px;width:100%;">
+
+      <div class="login-form-hd">
+        <h2>Sign in to Psykata</h2>
+        <p>Welcome back. Continue your practice.</p>
+      </div>
+
+      <div class="login-error" id="loginError"></div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Your password" autocomplete="current-password" required>
+        </div>
+
+        <div class="form-row">
+          <label class="check-label">
+            <input type="checkbox" name="remember">
+            Keep me signed in
+          </label>
+          <a href="#" class="form-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-solid login-submit">Sign In</button>
+      </form>
+
+      <div class="login-divider">or</div>
+
+      <button class="btn btn-ghost login-alt" type="button">
+        Continue with Google
+      </button>
+
+      <p class="login-note">
+        Not a member yet?
+        <a href="index.html#manifesto">Learn about Psykata</a>
+      </p>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

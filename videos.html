@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psykata — Training Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">PSY<span class="logo-accent">KATA</span></a>
+    <div class="nav-links">
+      <div class="nav-page-links" style="display:flex;gap:32px;align-items:center;">
+        <a href="index.html"  data-page="index.html">Home</a>
+        <a href="videos.html" data-page="videos.html">Training</a>
+      </div>
+      <a href="login.html" class="btn btn-solid nav-cta" data-page="login.html">Member Login</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Page header ── -->
+<div class="page-hero">
+  <div class="container">
+    <p class="t-label" style="color:var(--crimson);margin-bottom:16px;">Training Library</p>
+    <h1 class="t-display">The complete curriculum.</h1>
+    <p>Select a level and begin your session. New videos added monthly.</p>
+
+    <div class="level-tabs">
+      <button class="tab-btn active" data-tab="beginner">Beginner</button>
+      <button class="tab-btn"        data-tab="intermediate">Intermediate</button>
+      <button class="tab-btn"        data-tab="advanced">Advanced</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── BEGINNER ── -->
+  <div id="beginner" class="tab-pane active">
+    <div class="videos-section">
+      <div class="video-grid">
+
+        <!-- Featured -->
+        <div class="video-card video-featured">
+          <div class="v-thumb thumb-beg">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">12:34</span>
+          </div>
+          <div class="v-body">
+            <p class="t-label" style="color:var(--crimson);margin-bottom:12px;">Start here</p>
+            <h3>Introduction to Stances</h3>
+            <p>
+              Every technique in martial arts grows from the ground. In this first session
+              we establish the three foundational stances, explain why each exists,
+              and drill the transitions between them until they become reflex.
+            </p>
+            <a href="login.html" class="btn btn-solid" style="align-self:flex-start;margin-top:auto;">
+              Watch Lesson 1
+            </a>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="video-card">
+          <div class="v-thumb thumb-beg">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">9:15</span>
+          </div>
+          <div class="v-body">
+            <h4>Basic Punches &amp; Strikes</h4>
+            <p>Fist formation, straight punch mechanics, and the common errors to avoid.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-green">Beginner</span>
+              <span class="v-lesson">Lesson 2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-beg">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">14:02</span>
+          </div>
+          <div class="v-body">
+            <h4>Fundamental Kicks</h4>
+            <p>Front kick, roundhouse, and side kick — step by step with slow-motion breakdown.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-green">Beginner</span>
+              <span class="v-lesson">Lesson 3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-beg">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">11:48</span>
+          </div>
+          <div class="v-body">
+            <h4>Basic Blocks &amp; Defence</h4>
+            <p>High block, low block, and inside/outside forearm blocks explained clearly.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-green">Beginner</span>
+              <span class="v-lesson">Lesson 4</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-beg">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">8:22</span>
+          </div>
+          <div class="v-body">
+            <h4>Falling Safely</h4>
+            <p>Breakfalls and ukemi — how to meet the ground without getting hurt.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-green">Beginner</span>
+              <span class="v-lesson">Lesson 5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-beg">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">16:55</span>
+          </div>
+          <div class="v-body">
+            <h4>First Kata: Kihon</h4>
+            <p>Your first complete form — combining everything from lessons 1 through 5.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-green">Beginner</span>
+              <span class="v-lesson">Lesson 6</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── INTERMEDIATE ── -->
+  <div id="intermediate" class="tab-pane">
+    <div class="videos-section">
+      <div class="video-grid">
+
+        <!-- Featured -->
+        <div class="video-card video-featured">
+          <div class="v-thumb thumb-int">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">18:10</span>
+          </div>
+          <div class="v-body">
+            <p class="t-label" style="color:var(--bronze);margin-bottom:12px;">Level 2 — Start here</p>
+            <h3>Combination Sequences</h3>
+            <p>
+              A single technique is a word. A combination is a sentence. This session
+              teaches you to chain strikes and kicks into fluid, tactically coherent sequences &mdash;
+              and to read an opponent so you know which sentence fits the moment.
+            </p>
+            <a href="login.html" class="btn btn-solid" style="align-self:flex-start;margin-top:auto;">
+              Watch Lesson 1
+            </a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-int">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">22:05</span>
+          </div>
+          <div class="v-body">
+            <h4>Partner Drilling</h4>
+            <p>Timing, distance management, and controlled contact with a training partner.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-gold">Intermediate</span>
+              <span class="v-lesson">Lesson 2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-int">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">19:30</span>
+          </div>
+          <div class="v-body">
+            <h4>Kata: Heian Shodan</h4>
+            <p>Full walkthrough of the first formal kata with application notes (bunkai).</p>
+            <div class="v-meta">
+              <span class="level-badge badge-gold">Intermediate</span>
+              <span class="v-lesson">Lesson 3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-int">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">15:45</span>
+          </div>
+          <div class="v-body">
+            <h4>Footwork &amp; Angles</h4>
+            <p>Pivoting, angling, and controlling space — the geometry of a real fight.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-gold">Intermediate</span>
+              <span class="v-lesson">Lesson 4</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-int">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">24:00</span>
+          </div>
+          <div class="v-body">
+            <h4>Grappling Fundamentals</h4>
+            <p>Clinch work, basic takedowns, and ground positioning.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-gold">Intermediate</span>
+              <span class="v-lesson">Lesson 5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-int">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">20:18</span>
+          </div>
+          <div class="v-body">
+            <h4>Conditioning for Martial Arts</h4>
+            <p>Strength and endurance training designed specifically for fighters.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-gold">Intermediate</span>
+              <span class="v-lesson">Lesson 6</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ADVANCED ── -->
+  <div id="advanced" class="tab-pane">
+    <div class="videos-section">
+      <div class="video-grid">
+
+        <!-- Featured -->
+        <div class="video-card video-featured">
+          <div class="v-thumb thumb-adv">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">32:14</span>
+          </div>
+          <div class="v-body">
+            <p class="t-label" style="color:var(--crimson);margin-bottom:12px;">Level 3 — Start here</p>
+            <h3>Advanced Kata: Bassai Dai</h3>
+            <p>
+              A competition-level breakdown of one of the most demanding kata in the curriculum.
+              We cover every transition in detail, then dismantle the form for its practical applications &mdash;
+              bunkai that works outside the dojo.
+            </p>
+            <a href="login.html" class="btn btn-solid" style="align-self:flex-start;margin-top:auto;">
+              Watch Lesson 1
+            </a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-adv">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">28:40</span>
+          </div>
+          <div class="v-body">
+            <h4>Competition Strategy</h4>
+            <p>Reading opponents, timing attacks, and controlling the score from the first second.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-red">Advanced</span>
+              <span class="v-lesson">Lesson 2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-adv">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">35:00</span>
+          </div>
+          <div class="v-body">
+            <h4>Pressure Testing</h4>
+            <p>Light sparring, resistance drilling, and stress inoculation under controlled conditions.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-red">Advanced</span>
+              <span class="v-lesson">Lesson 3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-adv">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">26:22</span>
+          </div>
+          <div class="v-body">
+            <h4>Weapon Forms: Bo Staff</h4>
+            <p>Traditional bo staff kata and the weapons principles that carry into open-hand work.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-red">Advanced</span>
+              <span class="v-lesson">Lesson 4</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-adv">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">40:10</span>
+          </div>
+          <div class="v-body">
+            <h4>Instructor Development</h4>
+            <p>Teaching methodology, cuing techniques, and the practice of building your own students.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-red">Advanced</span>
+              <span class="v-lesson">Lesson 5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="v-thumb thumb-adv">
+            <div class="play-ring"><div class="play-arrow"></div></div>
+            <span class="v-dur">38:55</span>
+          </div>
+          <div class="v-body">
+            <h4>Mind &amp; Mental Fortitude</h4>
+            <p>Breathwork, visualisation, and the psychology of elite martial performance.</p>
+            <div class="v-meta">
+              <span class="level-badge badge-red">Advanced</span>
+              <span class="v-lesson">Lesson 6</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="logo">PSY<span class="logo-accent">KATA</span></span>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <span class="footer-copy">&copy; 2026 Psykata. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
