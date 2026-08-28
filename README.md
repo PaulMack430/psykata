@@ -1,124 +1,107 @@
-# Claude Technical Advisor for Startups
+# Psykata — Martial Arts Training Website
 
-A multi-turn AI advisor that helps startup founders choose the right Claude architecture for their use case — and shows exactly why.
-
-Built by [Paul Maclean](https://github.com/PaulMack430) as part of a suite of tools for making AI infrastructure decisions concrete and fast.
+A membership website for martial arts students. Watch training videos, track your progress, and level up from beginner to advanced.
 
 ---
 
-## What It Does
+## What Is This?
 
-Founders describe their problem in plain language. The advisor returns a specific architecture recommendation with working code, cost estimate, and tradeoff analysis — grounded in a curated knowledge base of real Claude patterns.
+Psykata is a website for a martial arts school. It has three parts:
 
-**Example inputs that work well:**
+1. A landing page — the front door. Visitors see what the school is about and can sign up.
+2. A video library — training videos organized into Beginner, Intermediate, and Advanced levels.
+3. A login page — members sign in to access their content.
 
-- *"We're building a chatbot for customer support. 1K tickets/day. Budget is tight."*
-- *"We need real-time search over documents. Latency under 100ms."*
-- *"We're running batch analytics on historical data. Speed doesn't matter."*
-- *"We want to build an AI code reviewer that posts GitHub comments."*
-
-The advisor asks follow-up questions, refines its recommendation across turns, and surfaces concrete code examples — not generic advice.
+Think of it like Netflix, but for martial arts training.
 
 ---
 
-## Claude Patterns This Demonstrates
+## What Is In The Folder
 
-This is a working implementation of the patterns that matter most when building production Claude applications:
-
-**RAG (Knowledge Base)** — Structured `knowledge_base.json` covers streaming, caching, batch processing, tool use, structured output, cost optimization, and startup-specific patterns. Claude cites specific patterns by name when it recommends them.
-
-**Prompt Caching** — The knowledge base loads once and is cached with `cache_control: {type: 'ephemeral'}`. On the first query you'll see `cache_creation_input_tokens` in the response; on subsequent queries those tokens are served from cache at ~10% of the original cost.
-
-**Tool Use** — Claude calls `fetch_code_example` to pull working snippets for the recommended pattern. The tool call is visible in the flow, making it easy to extend with additional tools.
-
-**Streaming** — Responses render token-by-token using SSE. The advisor feels responsive even when generating detailed recommendations.
-
-**Structured Output** — Returns JSON with `recommendation`, `pattern`, `code_example`, and `cost_estimate` fields. Predictable output makes it easy to build on top of.
-
-**Multi-turn Conversation** — Follow-up questions refine the recommendation. The advisor maintains context across turns without re-sending the knowledge base.
+- index.html — The landing page
+- videos.html — The video library with beginner, intermediate, and advanced tabs
+- login.html — The member login page
+- css/styles.css — All the colors, fonts, and layout
+- js/main.js — Makes the tabs and navigation work
 
 ---
 
-## Quick Start
+## How To Open It On Your Computer
 
-```bash
-pip install anthropic
-export ANTHROPIC_API_KEY="sk-ant-..."
-```
+No installation needed. Just open the files in your browser.
 
-**Interactive mode** (multi-turn conversation):
-```bash
-python advisor.py
-```
-
-**Single demo query** (shows the full flow in one shot):
-```bash
-python advisor.py --demo
-```
-
-The demo mode runs a customer support scenario and prints the full JSON recommendation — useful for seeing the output structure before going interactive.
+On Linux: xdg-open index.html
+On Mac: open index.html
+On Windows: double-click index.html in your file explorer
 
 ---
 
-## How It Works
+## How To Put It On The Internet
 
-```
-User describes their problem
-        ↓
-Advisor reads cached knowledge base
-        ↓
-Advisor recommends a specific Claude pattern
-        ↓
-Advisor calls fetch_code_example tool
-        ↓
-Returns JSON: recommendation + code + cost estimate
-        ↓
-User asks follow-up → advisor refines
-```
+Step 1 - Create a GitHub account at https://github.com
 
-The knowledge base (`knowledge_base.json`) is the source of truth. The advisor doesn't hallucinate patterns — it cites what's in the KB and tells you when a scenario falls outside it.
+Step 2 - Push this folder to GitHub
+On GitHub click the plus button, click New repository, name it psykata, do NOT check Initialize with README, click Create repository. Then run the commands GitHub shows you.
+
+Step 3 - Deploy to Vercel for free
+Go to https://vercel.com, sign up with your GitHub account, click Add New Project, select your psykata repo, click Deploy. Vercel gives you a live URL instantly.
+
+Step 4 - Buy a domain for about 12 dollars a year
+Go to https://www.cloudflare.com/products/registrar and search for your domain name.
+
+Step 5 - Attach your domain to Vercel
+In Vercel go to Settings then Domains. Add your domain. Copy the two DNS records Vercel gives you and paste them into Cloudflare DNS settings. Wait 10 to 30 minutes.
 
 ---
 
-## Extending It
+## What Is Not Built Yet
 
-### Add your own patterns
-
-Edit `knowledge_base.json` to add patterns from your own production systems. The advisor will cite them the same way it cites the built-in ones. The more specific the pattern (real latency numbers, real cost figures, real failure modes), the more useful the recommendation.
-
-### Add more tools
-
-```python
-def get_available_tools():
-    return [
-        fetch_code_example,      # Already implemented
-        estimate_costs,          # Calculate real pricing for their scale
-        check_model_fit,         # Haiku vs Sonnet vs Opus for this use case
-        find_similar_pattern,    # Surface related patterns from the KB
-    ]
-```
-
-### Deploy it
-
-Wrap `advisor.py` in a FastAPI endpoint and you have a live API. The frontend folder has a React + Vite interface ready to connect to it.
+Real login system — members can actually log in — needs Supabase which is free to start
+Payment system — charge for membership — needs Stripe at 2.9 percent per transaction
+Real videos — private training videos — needs Vimeo Starter at about 12 dollars per month
+Student progress tracking — know who watched what — needs a database via Supabase
 
 ---
 
-## Part of a Larger Suite
+## Video Hosting
 
-This advisor is one of four tools built around the same problem: founders make bad AI architecture decisions because the real costs and tradeoffs aren't visible upfront.
+Do not use YouTube for paid content. YouTube is public and shows competitor ads.
 
-| Tool | What it does |
-|---|---|
-| **Technical Advisor** (this repo) | Multi-turn conversation — ask anything about Claude patterns |
-| [**Claude vs The Field**](https://github.com/PaulMack430/claude-vs-llama-comparison) | Side-by-side TCO comparison across 7 models with hallucination rate data |
-| **AI Cost Calculator** | Input your traffic and use case — get architecture + monthly cost breakdown |
-| **AI Path Forward** | Situational roadmap — phased plan based on where you are and where you're going |
+Use Vimeo instead. Videos are private and only play on your site. No ads. No competitor videos. Streams fast on any device. About 12 dollars per month at https://vimeo.com/upgrade
 
 ---
 
-## Stack
+## How To Make Changes
 
-- **Backend:** Python + Anthropic SDK (`claude-sonnet-4-6`)
-- **Frontend:** React + Vite
-- **Patterns:** RAG, prompt caching, tool use, streaming, structured output, multi-turn
+Using Claude in your browser:
+1. Go to https://claude.ai
+2. Paste your GitHub repo link
+3. Tell Claude what you want to change in plain English
+4. Copy the updated code back into your files
+5. Push to GitHub and Vercel updates automatically
+
+Using Claude Code in your terminal:
+curl -fsSL https://claude.ai/install.sh | bash
+cd ~/psykata
+claude
+
+---
+
+## Cost To Launch
+
+Domain — about 12 dollars per year
+Vercel hosting — free
+Supabase database — free to start
+Stripe payments — 2.9 percent per transaction
+Vimeo video hosting — about 12 dollars per month
+
+Total to launch: about 12 dollars for the domain. Everything else free until you have paying students.
+
+---
+
+## Built By
+
+Paul Maclean — Applied AI Engineer
+https://github.com/PaulMack430
+
+Built as a starter template for the Psykata martial arts training platform.
